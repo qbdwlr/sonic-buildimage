@@ -1,0 +1,13 @@
+diff --git a/lib/route/route_obj.c b/lib/route/route_obj.c
+index bacabe8..da597c2 100644
+--- a/lib/route/route_obj.c
++++ b/lib/route/route_obj.c
+@@ -1024,7 +1024,7 @@ static int parse_multipath(struct rtnl_route *route, struct nlattr *attr)
+ {
+ 	struct rtnl_nexthop *nh = NULL;
+ 	struct rtnexthop *rtnh = nla_data(attr);
+-	size_t tlen = nla_len(attr);
++	ssize_t tlen = nla_len(attr);
+ 	int err;
+ 
+ 	while (tlen >= sizeof(*rtnh) && tlen >= rtnh->rtnh_len) {
